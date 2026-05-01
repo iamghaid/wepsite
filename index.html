@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أبو أحمد أبو مغارة للعقارات - مدينة الباب، حلب</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dark: #8B6914;
+    --navy: #0D1B2A;
+    --navy-mid: #1A2E45;
+    --navy-light: #243D5A;
+    --cream: #FAF7F2;
+    --cream-dark: #F0EBE1;
+    --text-dark: #1A1A1A;
+    --text-muted: #6B7280;
+    --white: #FFFFFF;
+    --green: #2D8653;
+    --red: #C0392B;
+    --shadow: 0 4px 24px rgba(13,27,42,0.12);
+    --shadow-hover: 0 8px 40px rgba(13,27,42,0.2);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    direction: rtl;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(13,27,42,0.97);
+    backdrop-filter: blur(20px);
+    padding: 0 2rem;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    font-weight: 900;
+    font-family: 'Tajawal', sans-serif;
+    box-shadow: 0 2px 12px rgba(201,168,76,0.4);
+  }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .nav-logo-text .name {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo-text .sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.1);
+  }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 8px 18px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 12px rgba(201,168,76,0.35);
+    transition: all 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(201,168,76,0.5) !important;
+    background: rgba(201,168,76,0.1) !important;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 2rem 60px;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
+      repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+    background-size: 60px 60px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.35);
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 0.6s ease;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 900;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 0.7s ease 0.1s both;
+  }
+
+  .hero h1 span {
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    max-width: 520px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 0.7s ease 0.2s both;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  /* SEARCH BOX */
+  .search-box {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 28px 32px;
+    width: 100%;
+    max-width: 780px;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.7s ease 0.3s both;
+  }
+
+  .search-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #F0EBE1;
+  }
+
+  .search-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .tab-btn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1.5px solid #E5E7EB;
+    background: transparent;
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: white;
+  }
+
+  .tab-btn:hover:not(.active) {
+    border-color: var(--navy);
+    color: var(--navy);
+  }
+
+  .search-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+  }
+
+  .search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .search-field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .search-field input,
+  .search-field select {
+    height: 46px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--cream);
+    width: 100%;
+    appearance: none;
+    direction: rtl;
+  }
+
+  .search-field input:focus,
+  .search-field select:focus {
+    border-color: var(--gold);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+  }
+
+  .search-btn {
+    height: 46px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0 28px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(201,168,76,0.55);
+  }
+
+  /* HERO STATS */
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.7s ease 0.4s both;
+  }
+
+  .stat-item {
+    text-align: center;
+    color: white;
+  }
+
+  .stat-number {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .stat-divider {
+    width: 1px;
+    background: rgba(201,168,76,0.25);
+    align-self: stretch;
+  }
+
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 80px 2rem;
+  }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.12);
+    color: var(--gold-dark);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ===== PROPERTY CARDS ===== */
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+  }
+
+  .property-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .property-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-image-inner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .property-card:hover .card-image-inner {
+    transform: scale(1.05);
+  }
+
+  /* Placeholder images using CSS */
+  .img-apt { background: linear-gradient(135deg, #1A2E45 0%, #243D5A 40%, #C9A84C22 100%); }
+  .img-villa { background: linear-gradient(135deg, #1B3A2D 0%, #2D6B4A 40%, #C9A84C22 100%); }
+  .img-land { background: linear-gradient(135deg, #3D2B1A 0%, #6B4A2D 40%, #C9A84C22 100%); }
+  .img-shop { background: linear-gradient(135deg, #2A1A3D 0%, #4A2D6B 40%, #C9A84C22 100%); }
+
+  .card-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    position: relative;
+  }
+
+  .card-image-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(13,27,42,0.6) 100%);
+  }
+
+  .card-badges {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 2;
+  }
+
+  .badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  .badge-sale { background: var(--navy); color: var(--gold-light); }
+  .badge-rent { background: var(--green); color: white; }
+  .badge-new { background: var(--gold); color: white; }
+  .badge-featured { background: rgba(255,255,255,0.92); color: var(--navy); border: 1px solid rgba(201,168,76,0.4); }
+
+  .card-fav {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .card-fav:hover { background: white; transform: scale(1.1); }
+
+  .card-body {
+    padding: 20px 22px;
+  }
+
+  .card-type {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .card-location {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .card-specs {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--cream-dark);
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 12px 0;
+    margin-bottom: 16px;
+  }
+
+  .spec-item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    position: relative;
+  }
+
+  .spec-item + .spec-item::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background: var(--cream-dark);
+  }
+
+  .spec-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .spec-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-amount {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--navy);
+  }
+
+  .price-currency {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold-dark);
+  }
+
+  .card-contact-btn {
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-contact-btn:hover {
+    background: var(--gold-dark);
+    transform: translateY(-1px);
+  }
+
+  /* ===== CATEGORIES SECTION ===== */
+  .categories {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .categories::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: repeating-linear-gradient(
+      0deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 40px
+    ),
+    repeating-linear-gradient(
+      90deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 40px
+    );
+  }
+
+  .categories .section-title { color: white; }
+  .categories .section-desc { color: rgba(255,255,255,0.55); }
+  .categories .section-tag { background: rgba(201,168,76,0.2); color: var(--gold-light); }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .cat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .cat-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+  }
+
+  .cat-card:hover {
+    border-color: rgba(201,168,76,0.6);
+    transform: translateY(-4px);
+  }
+
+  .cat-card:hover::before { opacity: 1; }
+
+  .cat-icon {
+    font-size: 44px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .cat-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .cat-count {
+    font-size: 13px;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  /* ===== WHY US SECTION ===== */
+  .why-us { background: var(--cream-dark); }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 34px 28px;
+    box-shadow: var(--shadow);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card:hover {
+    border-bottom-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .feature-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(201,168,76,0.35);
+  }
+
+  .feature-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ===== CTA SECTION ===== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy) 0%, #152234 50%, #0D1B2A 100%);
+    padding: 80px 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section h2 span { color: var(--gold-light); }
+
+  .cta-section p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 32px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(201,168,76,0.55);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 10px;
+    padding: 14px 32px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold-light);
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.08);
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    font-size: 64px;
+    font-family: Georgia, serif;
+    color: rgba(201,168,76,0.15);
+    line-height: 1;
+  }
+
+  .testimonial-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 14px;
+  }
+
+  .star { color: var(--gold); font-size: 14px; }
+
+  .testimonial-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--gold-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .author-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .author-city {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 60px 2rem 30px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+  }
+
+  .footer-logo-text { font-size: 18px; font-weight: 700; color: var(--gold-light); }
+
+  .footer-desc {
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-contact-item span:first-child { color: var(--gold-light); }
+
+  .footer-heading {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 18px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .footer-links { list-style: none; }
+
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-links a::before {
+    content: '←';
+    font-size: 11px;
+    color: var(--gold);
+    opacity: 0;
+    transform: translateX(6px);
+    transition: all 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-links a:hover::before { opacity: 1; transform: translateX(0); }
+
+  .footer-bottom {
+    max-width: 1140px;
+    margin: 28px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ===== CURRENCY BAR ===== */
+  .currency-bar {
+    background: linear-gradient(135deg, #0a1520, #13253a);
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+    padding: 0 2rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 70px;
+    left: 0; right: 0;
+    z-index: 999;
+    font-size: 13px;
+  }
+
+  .currency-rates {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .rate-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .rate-flag { font-size: 15px; }
+
+  .rate-label {
+    color: rgba(255,255,255,0.45);
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .rate-value {
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rate-divider {
+    width: 1px;
+    height: 18px;
+    background: rgba(201,168,76,0.2);
+  }
+
+  .currency-bar-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .currency-bar-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #4ADE80;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  /* ===== CURRENCY TOGGLE ON CARDS ===== */
+  .price-toggle-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .price-toggle-btns {
+    display: flex;
+    gap: 3px;
+    margin-top: 4px;
+  }
+
+  .curr-btn {
+    padding: 2px 7px;
+    border-radius: 5px;
+    border: 1px solid rgba(13,27,42,0.2);
+    background: var(--cream);
+    font-family: 'Cairo', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .curr-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: white;
+  }
+
+  .curr-btn:hover:not(.active) {
+    border-color: var(--gold-dark);
+    color: var(--gold-dark);
+  }
+
+  /* ===== CONVERTER SECTION ===== */
+  .converter-section {
+    background: var(--navy);
+    padding: 60px 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .converter-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+    background-size: 40px 40px;
+  }
+
+  .converter-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 20px;
+    padding: 36px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .converter-title {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .converter-subtitle {
+    text-align: center;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+
+  .converter-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .conv-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .conv-field label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .conv-field label span { font-size: 16px; }
+
+  .conv-field input {
+    height: 52px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    padding: 0 16px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold-light);
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .conv-field input:focus {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .conv-arrow {
+    font-size: 24px;
+    color: var(--gold);
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .conv-select {
+    height: 52px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    padding: 0 16px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    direction: rtl;
+    appearance: none;
+    transition: border-color 0.2s;
+  }
+
+  .conv-select:focus { border-color: var(--gold); }
+
+  .conv-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .conv-result-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .conv-result-flag { font-size: 20px; margin-bottom: 4px; }
+  .conv-result-label { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+  .conv-result-value { font-size: 16px; font-weight: 800; color: var(--gold-light); }
+  .conv-result-name { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+
+  .conv-update-note {
+    text-align: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 11px;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .conv-update-note::before {
+    content: '';
+    width: 5px; height: 5px;
+    background: #4ADE80;
+    border-radius: 50%;
+  }
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    left: 28px;
+    z-index: 999;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.65);
+  }
+
+  .whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .search-grid { grid-template-columns: 1fr 1fr; }
+    .search-btn { grid-column: 1 / -1; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .search-grid { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .hero-stats { flex-wrap: wrap; gap: 16px; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">أأ</div>
+    <div class="nav-logo-text">
+      <span class="name">أبو أحمد أبو مغارة للعقارات</span>
+      <span class="sub">مدينة الباب — حلب السورية</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#properties">العقارات</a></li>
+    <li><a href="#categories">التصنيفات</a></li>
+    <li><a href="#why-us">لماذا نحن</a></li>
+    <li><a href="#converter">محوّل العملات</a></li>
+    <li><a href="#contact" class="nav-cta">تواصل معنا</a></li>
+  </ul>
+</nav>
+
+<!-- CURRENCY BAR -->
+<div class="currency-bar">
+  <div class="currency-rates">
+    <div class="rate-item">
+      <span class="rate-flag">🇺🇸</span>
+      <span class="rate-label">دولار</span>
+      <span class="rate-value" id="bar-usd">12,100 ل.س</span>
+    </div>
+    <div class="rate-divider"></div>
+    <div class="rate-item">
+      <span class="rate-flag">🇹🇷</span>
+      <span class="rate-label">تركي</span>
+      <span class="rate-value" id="bar-try">311 ل.س</span>
+    </div>
+    <div class="rate-divider"></div>
+    <div class="rate-item">
+      <span class="rate-flag">🇸🇾</span>
+      <span class="rate-label">1$ =</span>
+      <span class="rate-value" id="bar-try-usd">44 ₺</span>
+    </div>
+  </div>
+  <div class="currency-bar-label">أسعار مباشرة — مايو 2025</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-badge">
+    📍 أكبر مكتب عقاري في مدينة الباب
+  </div>
+
+  <h1>
+    ابحث عن عقارك المثالي
+    <span>في مدينة الباب، حلب</span>
+  </h1>
+
+  <p class="hero-subtitle">
+    شقق، منازل، أراضي، ومحلات تجارية بأفضل الأسعار.<br>
+    خبرة تزيد عن 15 سنة في السوق العقاري.
+  </p>
+
+  <!-- SEARCH BOX -->
+  <div class="search-box">
+    <p class="search-title">🔍 ابحث عن عقارك الآن</p>
+
+    <div class="search-tabs">
+      <button class="tab-btn active" onclick="setTab(this, 'بيع')">للبيع</button>
+      <button class="tab-btn" onclick="setTab(this, 'إيجار')">للإيجار</button>
+      <button class="tab-btn" onclick="setTab(this, 'استثمار')">استثمار</button>
+    </div>
+
+    <div class="search-grid">
+      <div class="search-field">
+        <label>الحي / المنطقة</label>
+        <select>
+          <option value="">مدينة الباب كاملة</option>
+          <option>البلدة القديمة (مركز الباب)</option>
+          <option>حي الجامع الكبير</option>
+          <option>المنطقة الغربية</option>
+          <option>المنطقة الشمالية</option>
+          <option>المنطقة الجنوبية</option>
+          <option>حي سوق الهال</option>
+          <option>طريق تادف</option>
+          <option>طريق الراعي (اعزاز)</option>
+          <option>طريق قباسين</option>
+        </select>
+      </div>
+
+      <div class="search-field">
+        <label>نوع العقار</label>
+        <select>
+          <option value="">جميع الأنواع</option>
+          <option>شقة</option>
+          <option>منزل / بيت</option>
+          <option>أرض</option>
+          <option>محل تجاري</option>
+          <option>فيلا</option>
+          <option>مستودع</option>
+        </select>
+      </div>
+
+      <div class="search-field">
+        <label>الميزانية ($)</label>
+        <select>
+          <option value="">أي سعر</option>
+          <option>أقل من 10,000</option>
+          <option>10,000 - 30,000</option>
+          <option>30,000 - 60,000</option>
+          <option>60,000 - 100,000</option>
+          <option>أكثر من 100,000</option>
+        </select>
+      </div>
+
+      <button class="search-btn" onclick="doSearch()">
+        🔍 ابحث
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-number">+300</span>
+      <span class="stat-label">عقار متاح</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">+1500</span>
+      <span class="stat-label">صفقة ناجحة</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">15+</span>
+      <span class="stat-label">سنة خبرة</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">98٪</span>
+      <span class="stat-label">رضا العملاء</span>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">التصنيفات</div>
+      <h2 class="section-title">ابحث حسب نوع العقار</h2>
+      <p class="section-desc">تشكيلة واسعة من العقارات السكنية والتجارية في الباب وريفها</p>
+    </div>
+
+    <div class="cat-grid">
+      <div class="cat-card" onclick="filterByType('شقق')">
+        <span class="cat-icon">🏢</span>
+        <div class="cat-name">الشقق السكنية</div>
+        <div class="cat-count">+120 عقار</div>
+      </div>
+      <div class="cat-card" onclick="filterByType('منازل')">
+        <span class="cat-icon">🏠</span>
+        <div class="cat-name">المنازل والبيوت</div>
+        <div class="cat-count">+85 عقار</div>
+      </div>
+      <div class="cat-card" onclick="filterByType('أراضي')">
+        <span class="cat-icon">🌿</span>
+        <div class="cat-name">الأراضي والمزارع</div>
+        <div class="cat-count">+60 عقار</div>
+      </div>
+      <div class="cat-card" onclick="filterByType('تجاري')">
+        <span class="cat-icon">🏪</span>
+        <div class="cat-name">المحلات التجارية</div>
+        <div class="cat-count">+45 عقار</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROPERTIES -->
+<section id="properties" style="background: var(--cream);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">عقارات مميزة</div>
+      <h2 class="section-title">أحدث العروض في الباب</h2>
+      <p class="section-desc">عقارات تم التحقق منها مباشرة، بأسعار شفافة وبدون رسوم مخفية</p>
+    </div>
+
+    <div class="properties-grid" id="propertiesGrid">
+
+      <!-- Card 1 -->
+      <div class="property-card">
+        <div class="card-image">
+          <div class="card-image-placeholder img-apt">🏢</div>
+          <div class="card-badges">
+            <span class="badge badge-sale">للبيع</span>
+            <span class="badge badge-new">جديد</span>
+          </div>
+          <button class="card-fav" onclick="toggleFav(this)">🤍</button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">شقة سكنية</div>
+          <h3 class="card-title">شقة في مركز الباب — طابق ثاني</h3>
+          <div class="card-location">📍 البلدة القديمة، مدينة الباب</div>
+          <div class="card-specs">
+            <div class="spec-item">
+              <span class="spec-value">3</span>
+              <span class="spec-label">غرف</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">2</span>
+              <span class="spec-label">حمامات</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">115</span>
+              <span class="spec-label">م²</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-toggle-wrap">
+              <div class="price-toggle-btns">
+                <button class="curr-btn active" onclick="setCardCurr(this,'c1','USD')">$</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c1','SYP')">ل.س</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c1','TRY')">₺</button>
+              </div>
+              <span class="price-amount" id="c1-price">$25,000</span>
+            </div>
+            <button class="card-contact-btn" onclick="contactWhatsApp('شقة البلدة القديمة مركز الباب')">
+              📞 تواصل
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="property-card">
+        <div class="card-image">
+          <div class="card-image-placeholder img-villa">🏡</div>
+          <div class="card-badges">
+            <span class="badge badge-sale">للبيع</span>
+            <span class="badge badge-featured">⭐ مميز</span>
+          </div>
+          <button class="card-fav" onclick="toggleFav(this)">🤍</button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">منزل مستقل</div>
+          <h3 class="card-title">بيت في المنطقة الغربية — أرضي مع جنينة</h3>
+          <div class="card-location">📍 المنطقة الغربية، مدينة الباب</div>
+          <div class="card-specs">
+            <div class="spec-item">
+              <span class="spec-value">4</span>
+              <span class="spec-label">غرف</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">2</span>
+              <span class="spec-label">حمامات</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">200</span>
+              <span class="spec-label">م²</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-toggle-wrap">
+              <div class="price-toggle-btns">
+                <button class="curr-btn active" onclick="setCardCurr(this,'c2','USD')">$</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c2','SYP')">ل.س</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c2','TRY')">₺</button>
+              </div>
+              <span class="price-amount" id="c2-price">$45,000</span>
+            </div>
+            <button class="card-contact-btn" onclick="contactWhatsApp('بيت المنطقة الغربية الباب مع جنينة')">
+              📞 تواصل
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="property-card">
+        <div class="card-image">
+          <div class="card-image-placeholder img-land">🌿</div>
+          <div class="card-badges">
+            <span class="badge badge-sale">للبيع</span>
+          </div>
+          <button class="card-fav" onclick="toggleFav(this)">🤍</button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">أرض سكنية</div>
+          <h3 class="card-title">أرض قرب الجامع الكبير — طابو نظامي</h3>
+          <div class="card-location">📍 حي الجامع الكبير، الباب</div>
+          <div class="card-specs">
+            <div class="spec-item">
+              <span class="spec-value">—</span>
+              <span class="spec-label">غرف</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">نظامي</span>
+              <span class="spec-label">الطابو</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">250</span>
+              <span class="spec-label">م²</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-toggle-wrap">
+              <div class="price-toggle-btns">
+                <button class="curr-btn active" onclick="setCardCurr(this,'c3','USD')">$</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c3','SYP')">ل.س</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c3','TRY')">₺</button>
+              </div>
+              <span class="price-amount" id="c3-price">$18,000</span>
+            </div>
+            <button class="card-contact-btn" onclick="contactWhatsApp('أرض حي الجامع الكبير الباب')">
+              📞 تواصل
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="property-card">
+        <div class="card-image">
+          <div class="card-image-placeholder img-shop">🏪</div>
+          <div class="card-badges">
+            <span class="badge badge-rent">للإيجار</span>
+          </div>
+          <button class="card-fav" onclick="toggleFav(this)">🤍</button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">محل تجاري</div>
+          <h3 class="card-title">محل في الشارع الرئيسي — موقع ممتاز</h3>
+          <div class="card-location">📍 شارع جامع الكبير، الباب</div>
+          <div class="card-specs">
+            <div class="spec-item">
+              <span class="spec-value">—</span>
+              <span class="spec-label">غرف</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">رئيسي</span>
+              <span class="spec-label">الشارع</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">60</span>
+              <span class="spec-label">م²</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-toggle-wrap">
+              <div class="price-toggle-btns">
+                <button class="curr-btn active" onclick="setCardCurr(this,'c4','USD')">$</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c4','SYP')">ل.س</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c4','TRY')">₺</button>
+              </div>
+              <span class="price-amount" id="c4-price">$200 /شهر</span>
+            </div>
+            <button class="card-contact-btn" onclick="contactWhatsApp('محل تجاري شارع جامع الكبير')">
+              📞 تواصل
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="property-card">
+        <div class="card-image">
+          <div class="card-image-placeholder img-apt">🏢</div>
+          <div class="card-badges">
+            <span class="badge badge-sale">للبيع</span>
+            <span class="badge badge-featured">⭐ مميز</span>
+          </div>
+          <button class="card-fav" onclick="toggleFav(this)">🤍</button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">شقة سكنية</div>
+          <h3 class="card-title">شقة جديدة 3 غرف — بناء حديث</h3>
+          <div class="card-location">📍 المنطقة الشمالية، مدينة الباب</div>
+          <div class="card-specs">
+            <div class="spec-item">
+              <span class="spec-value">3</span>
+              <span class="spec-label">غرف</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">1</span>
+              <span class="spec-label">حمامات</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">240</span>
+              <span class="spec-label">م²</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-toggle-wrap">
+              <div class="price-toggle-btns">
+                <button class="curr-btn active" onclick="setCardCurr(this,'c5','USD')">$</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c5','SYP')">ل.س</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c5','TRY')">₺</button>
+              </div>
+              <span class="price-amount" id="c5-price">$38,000</span>
+            </div>
+            <button class="card-contact-btn" onclick="contactWhatsApp('شقة جديدة 3 غرف مركز الباب')">
+              📞 تواصل
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="property-card">
+        <div class="card-image">
+          <div class="card-image-placeholder img-land">🌾</div>
+          <div class="card-badges">
+            <span class="badge badge-sale">للبيع</span>
+          </div>
+          <button class="card-fav" onclick="toggleFav(this)">🤍</button>
+        </div>
+        <div class="card-body">
+          <div class="card-type">أرض زراعية</div>
+          <h3 class="card-title">أرض زراعية على طريق الراعي</h3>
+          <div class="card-location">📍 طريق الراعي، شمال الباب</div>
+          <div class="card-specs">
+            <div class="spec-item">
+              <span class="spec-value">—</span>
+              <span class="spec-label">غرف</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">زراعية</span>
+              <span class="spec-label">نوع الأرض</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-value">5,000</span>
+              <span class="spec-label">م²</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-toggle-wrap">
+              <div class="price-toggle-btns">
+                <button class="curr-btn active" onclick="setCardCurr(this,'c6','USD')">$</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c6','SYP')">ل.س</button>
+                <button class="curr-btn" onclick="setCardCurr(this,'c6','TRY')">₺</button>
+              </div>
+              <span class="price-amount" id="c6-price">$35,000</span>
+            </div>
+            <button class="card-contact-btn" onclick="contactWhatsApp('أرض زراعية طريق الراعي شمال الباب')">
+              📞 تواصل
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div
+
+    <div style="text-align: center; margin-top: 48px;">
+      <button class="btn-primary" onclick="loadMore()" style="margin: 0 auto;">
+        عرض المزيد من العقارات ←
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENCY CONVERTER SECTION -->
+<section class="converter-section" id="converter">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="background: rgba(201,168,76,0.2); color: var(--gold-light);">ميزة حصرية</div>
+      <h2 class="section-title" style="color: white;">محوّل العملات الفوري</h2>
+      <p class="section-desc" style="color: rgba(255,255,255,0.5);">اعرف سعر أي عقار بالدولار والليرة السورية والليرة التركية — بضغطة واحدة</p>
+    </div>
+
+    <div class="converter-box">
+      <div class="converter-grid">
+        <div class="conv-field">
+          <label>
+            <span>💰</span> المبلغ
+          </label>
+          <input type="number" id="convAmount" value="25000" oninput="convertCurrency()" placeholder="أدخل المبلغ" />
+        </div>
+        <div class="conv-arrow">⇄</div>
+        <div class="conv-field">
+          <label>
+            <span>🔄</span> من عملة
+          </label>
+          <select id="convFrom" onchange="convertCurrency()" class="conv-select">
+            <option value="USD">🇺🇸 دولار أمريكي (USD)</option>
+            <option value="SYP">🇸🇾 ليرة سورية (ل.س)</option>
+            <option value="TRY">🇹🇷 ليرة تركية (₺)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="conv-results">
+        <div class="conv-result-card">
+          <div class="conv-result-flag">🇺🇸</div>
+          <div class="conv-result-label">دولار أمريكي</div>
+          <div class="conv-result-value" id="res-usd">$25,000</div>
+          <div class="conv-result-name">USD</div>
+        </div>
+        <div class="conv-result-card">
+          <div class="conv-result-flag">🇸🇾</div>
+          <div class="conv-result-label">ليرة سورية</div>
+          <div class="conv-result-value" id="res-syp">302,500,000</div>
+          <div class="conv-result-name">ل.س</div>
+        </div>
+        <div class="conv-result-card">
+          <div class="conv-result-flag">🇹🇷</div>
+          <div class="conv-result-label">ليرة تركية</div>
+          <div class="conv-result-value" id="res-try">₺1,100,000</div>
+          <div class="conv-result-name">TRY</div>
+        </div>
+      </div>
+
+      <p class="conv-update-note">أسعار الصرف محدّثة — مايو 2025 | $1 = 12,100 ل.س | 1₺ = 311 ل.س</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="why-us">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">لماذا نحن</div>
+      <h2 class="section-title">ثقتك أمانة عندنا</h2>
+      <p class="section-desc">خدمة عقارية شاملة وموثوقة لأهالي مدينة الباب ومن حولها</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon-wrap">✅</div>
+        <h3 class="feature-title">عقارات موثوقة ومضمونة</h3>
+        <p class="feature-desc">كل عقار نعرضه تم التحقق منه شخصياً ومن وثائقه القانونية قبل النشر. ما في مفاجآت.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">💰</div>
+        <h3 class="feature-title">أسعار شفافة وعادلة</h3>
+        <p class="feature-desc">السعر المكتوب هو السعر الحقيقي. لا رسوم مخفية ولا عمولات مبالغ فيها.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">🤝</div>
+        <h3 class="feature-title">خدمة شخصية مع أبو أحمد أبو مغارة</h3>
+        <p class="feature-desc">مش مجرد موقع، تتواصل مع أبو أحمد أبو مغارة مباشرة على واتساب وبيخدمك بنفسه.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">📋</div>
+        <h3 class="feature-title">مساعدة في الأوراق والطابو</h3>
+        <p class="feature-desc">نساعدك في كل خطوات التوثيق والتحويل ونوجهك لأفضل الخيارات القانونية.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrap">⚡</div>
+        <h3 class="feature-title">سرعة في الاستجابة</h3>
+        <p class="feature-desc">نرد على استفساراتك خلال ساعات، لأنك لا تريد ضياع فرصة عقارية بسبب التأخير.</p>
+      </div>
+      <div class="feature-card" style="border-bottom-color: var(--gold);">
+        <div class="feature-icon-wrap">💱</div>
+        <h3 class="feature-title">تحويل العملات مباشرة</h3>
+        <p class="feature-desc">اعرف سعر أي عقار بالدولار أو الليرة السورية أو التركية بضغطة واحدة — ميزة مو موجودة بأي موقع عقاري بالمنطقة!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background: var(--cream);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">آراء العملاء</div>
+      <h2 class="section-title">شو قالوا عنا</h2>
+      <p class="section-desc">تجارب حقيقية من أهالي الباب اللي وثقوا بنا</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">والله أبو أحمد أبو مغارة خدمني مثل أخوي. اشتريت شقة في البلدة القديمة وكان معي بكل خطوة من المعاينة للطابو. أنصح فيه كل واحد.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">مح</div>
+          <div>
+            <div class="author-name">محمد الحلبي</div>
+            <div class="author-city">📍 البلدة القديمة، الباب</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">بعت أرضي خلال أسبوعين بس مع أبو أحمد أبو مغارة. وحصلت على سعرها الحقيقي. إنسان أمين ومش فيه غش.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">أح</div>
+          <div>
+            <div class="author-name">أحمد العمر</div>
+            <div class="author-city">📍 مركز الباب</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">اتصلت فيه من تركيا وبدي أشتري بيت لأهلي بالباب. رتّب كل شي عن بعد وأهلي انتقلوا على البيت بدون أي مشاكل.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">سم</div>
+          <div>
+            <div class="author-name">سمير الشيخ</div>
+            <div class="author-city">📍 مغترب في تركيا</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>عندك عقار؟ <span>نبيعه لك بأسرع وقت</span></h2>
+  <p>سواء بدك تشتري، تبيع، أو تأجر — أبو أحمد أبو مغارة موجود ويخدمك</p>
+
+  <div class="cta-buttons">
+    <a href="https://wa.me/963969837508?text=مرحبا أبو أحمد، بدي أستفسر عن عقار" class="btn-primary" target="_blank">
+      📱 تواصل على واتساب
+    </a>
+    <a href="tel:+963969837508" class="btn-outline">
+      📞 اتصل مباشرة
+    </a>
+  </div>
+
+  <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 600px; margin-left: auto; margin-right: auto; margin-top: 48px;">
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2); border-radius: 14px; padding: 24px 16px; text-align: center; position: relative; z-index: 1;">
+      <div style="font-size: 28px; margin-bottom: 8px;">📱</div>
+      <div style="color: var(--gold-light); font-size: 13px; font-weight: 600; margin-bottom: 4px;">واتساب</div>
+      <div style="color: rgba(255,255,255,0.5); font-size: 12px;">متاح 24/7</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2); border-radius: 14px; padding: 24px 16px; text-align: center; position: relative; z-index: 1;">
+      <div style="font-size: 28px; margin-bottom: 8px;">📍</div>
+      <div style="color: var(--gold-light); font-size: 13px; font-weight: 600; margin-bottom: 4px;">المكتب</div>
+      <div style="color: rgba(255,255,255,0.5); font-size: 12px;">مركز الباب</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2); border-radius: 14px; padding: 24px 16px; text-align: center; position: relative; z-index: 1;">
+      <div style="font-size: 28px; margin-bottom: 8px;">⏰</div>
+      <div style="color: var(--gold-light); font-size: 13px; font-weight: 600; margin-bottom: 4px;">أوقات العمل</div>
+      <div style="color: rgba(255,255,255,0.5); font-size: 12px;">8AM - 9PM</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <div class="footer-logo-icon">أأ</div>
+        <span class="footer-logo-text">أبو أحمد للعقارات</span>
+      </div>
+      <p class="footer-desc">
+        مكتب عقاري متخصص في مدينة الباب، حلب. نقدم خدمات البيع والشراء والإيجار بأمانة وشفافية منذ أكثر من 10 سنة.
+      </p>
+      <div class="footer-contact-item">
+        <span>📱</span>
+        <span>واتساب: +963 969 837 508</span>
+      </div>
+      <div class="footer-contact-item">
+        <span>📍</span>
+        <span>مركز الباب، حلب، سوريا</span>
+      </div>
+      <div class="footer-contact-item">
+        <span>⏰</span>
+        <span>يومياً من 8 صباحاً حتى 9 مساءً</span>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="footer-heading">العقارات</h4>
+      <ul class="footer-links">
+        <li><a href="#">شقق للبيع</a></li>
+        <li><a href="#">منازل للبيع</a></li>
+        <li><a href="#">أراضي للبيع</a></li>
+        <li><a href="#">محلات للإيجار</a></li>
+        <li><a href="#">عروض جديدة</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="footer-heading">الأحياء</h4>
+      <ul class="footer-links">
+        <li><a href="#">حي زمزم </a></li>
+        <li><a href="#">حي سوق الهال</a></li>
+        <li><a href="#">مركز الباب</a></li>
+        <li><a href="#">حي الفتح</a></li>
+        <li><a href="#">طريق اعزاز</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="footer-heading">روابط مفيدة</h4>
+      <ul class="footer-links">
+        <li><a href="#">من نحن</a></li>
+        <li><a href="#">انشر عقارك</a></li>
+        <li><a href="#">نصائح الشراء</a></li>
+        <li><a href="#">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 أبو أحمد للعقارات — مدينة الباب، حلب</span>
+    <span>صُنع بـ ❤️ لأهل الباب</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/963969837508?text=مرحبا أبو أحمد" class="whatsapp-float" target="_blank" title="تواصل على واتساب">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.664 2.987-6.646 6.663-6.646a6.6 6.6 0 0 1 4.709 1.95 6.63 6.63 0 0 1 1.952 4.745c-.051 3.677-2.973 6.66-6.652 6.66zm3.12-4.95c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.13.197-.505.646-.619.776-.114.13-.228.145-.425.052-.197-.099-.836-.309-1.592-.985-.59-.525-.985-1.175-1.1-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.228.296-.342.1-.114.133-.228.199-.378.066-.15.033-.276-.033-.386-.066-.11-.445-1.074-.611-1.472-.16-.375-.323-.324-.445-.33-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.678-.691 1.653 0 .975.71 1.917.81 2.049.098.132 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.077.38-.058 1.171-.479 1.338-.94.164-.462.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+  </svg>
+</a>
+
+<script>
+  const RATES = {
+    USD_TO_SYP: 12100,
+    TRY_TO_SYP: 311,
+    USD_TO_TRY: 44.09
+  };
+
+  const CARD_PRICES_USD = {
+    c1: 25000, c2: 45000, c3: 18000,
+    c4: 200, c5: 38000, c6: 35000
+  };
+
+  const CARD_SUFFIX = { c4: ' /شهر' };
+
+  function formatNum(n) {
+    if (n >= 1000000) return (n / 1000000).toFixed(2) + ' مليون';
+    if (n >= 1000) return Math.round(n).toLocaleString('ar-EG');
+    return Math.round(n).toLocaleString('ar-EG');
+  }
+
+  function setCardCurr(btn, cardId, curr) {
+    const wrap = btn.closest('.price-toggle-wrap');
+    wrap.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const usdPrice = CARD_PRICES_USD[cardId];
+    const suffix = CARD_SUFFIX[cardId] || '';
+    const el = document.getElementById(cardId + '-price');
+    if (curr === 'USD') {
+      el.textContent = '$' + usdPrice.toLocaleString('ar-EG') + suffix;
+    } else if (curr === 'SYP') {
+      const syp = usdPrice * RATES.USD_TO_SYP;
+      el.textContent = formatNum(syp) + ' ل.س' + suffix;
+    } else {
+      const trY = usdPrice * RATES.USD_TO_TRY;
+      el.textContent = '₺' + formatNum(trY) + suffix;
+    }
+  }
+
+  function convertCurrency() {
+    const amount = parseFloat(document.getElementById('convAmount').value) || 0;
+    const from = document.getElementById('convFrom').value;
+    let usd, syp, trY;
+    if (from === 'USD') {
+      usd = amount; syp = amount * RATES.USD_TO_SYP; trY = amount * RATES.USD_TO_TRY;
+    } else if (from === 'SYP') {
+      usd = amount / RATES.USD_TO_SYP; syp = amount; trY = amount / RATES.TRY_TO_SYP;
+    } else {
+      usd = amount / RATES.USD_TO_TRY; syp = amount * RATES.TRY_TO_SYP; trY = amount;
+    }
+    document.getElementById('res-usd').textContent = '$' + Math.round(usd).toLocaleString();
+    document.getElementById('res-syp').textContent = formatNum(syp) + ' ل.س';
+    document.getElementById('res-try').textContent = '₺' + Math.round(trY).toLocaleString();
+  }
+
+  convertCurrency();
+
+  function setTab(btn, type) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function doSearch() {
+    alert('جاري البحث...\nيمكنك التواصل مع أبو أحمد مباشرة على واتساب.');
+  }
+
+  function filterByType(type) {
+    alert('عرض جميع ' + type + ' في مدينة الباب...\nتواصل مع أبو أحمد للمزيد.');
+  }
+
+  function toggleFav(btn) {
+    btn.textContent = btn.textContent === '🤍' ? '❤️' : '🤍';
+  }
+
+  function contactWhatsApp(property) {
+    const msg = encodeURIComponent('مرحبا أبو أحمد، بدي أستفسر عن: ' + property);
+    window.open('https://wa.me/963969837508?text=' + msg, '_blank');
+  }
+
+  function loadMore() {
+    alert('سيتم تحميل المزيد من العقارات...\nللاطلاع على كافة العروض تواصل مع أبو أحمد مباشرة.');
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 30 ? '0 2px 30px rgba(0,0,0,0.3)' : 'none';
+  });
+</script>
+
+</body>
+</html>
